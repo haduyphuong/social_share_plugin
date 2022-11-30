@@ -11,6 +11,8 @@ import androidx.core.content.FileProvider
 import com.facebook.CallbackManager
 import com.facebook.FacebookCallback
 import com.facebook.FacebookException
+import com.facebook.FacebookSdk
+import com.facebook.FacebookSdk.getApplicationContext
 import com.facebook.share.Sharer
 import com.facebook.share.model.ShareLinkContent
 import com.facebook.share.model.SharePhoto
@@ -43,6 +45,7 @@ class SocialSharePlugin : FlutterPlugin, ActivityAware, MethodCallHandler,
 	}
 
 	override fun onAttachedToActivity(binding: ActivityPluginBinding) {
+		FacebookSdk.sdkInitialize(getApplicationContext());
 		binding.addActivityResultListener(this)
 		activity = binding.activity
 	}
