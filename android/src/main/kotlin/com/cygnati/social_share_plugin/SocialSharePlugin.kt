@@ -11,8 +11,6 @@ import androidx.core.content.FileProvider
 import com.facebook.CallbackManager
 import com.facebook.FacebookCallback
 import com.facebook.FacebookException
-import com.facebook.FacebookSdk
-import com.facebook.FacebookSdk.getApplicationContext
 import com.facebook.share.Sharer
 import com.facebook.share.model.ShareLinkContent
 import com.facebook.share.model.SharePhoto
@@ -37,7 +35,6 @@ class SocialSharePlugin : FlutterPlugin, ActivityAware, MethodCallHandler,
 	private var channel: MethodChannel? = null
 	private val callbackManager: CallbackManager = CallbackManager.Factory.create()
 	override fun onAttachedToEngine(binding: FlutterPluginBinding) {
-		FacebookSdk.sdkInitialize(binding.applicationContext);
 		channel = MethodChannel(binding.binaryMessenger, "social_share_plugin")
 		channel!!.setMethodCallHandler(this)
 	}
