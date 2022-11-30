@@ -37,6 +37,7 @@ class SocialSharePlugin : FlutterPlugin, ActivityAware, MethodCallHandler,
 	private var channel: MethodChannel? = null
 	private val callbackManager: CallbackManager = CallbackManager.Factory.create()
 	override fun onAttachedToEngine(binding: FlutterPluginBinding) {
+		FacebookSdk.sdkInitialize(binding.applicationContext);
 		channel = MethodChannel(binding.binaryMessenger, "social_share_plugin")
 		channel!!.setMethodCallHandler(this)
 	}
@@ -45,7 +46,6 @@ class SocialSharePlugin : FlutterPlugin, ActivityAware, MethodCallHandler,
 	}
 
 	override fun onAttachedToActivity(binding: ActivityPluginBinding) {
-		FacebookSdk.sdkInitialize(getApplicationContext());
 		binding.addActivityResultListener(this)
 		activity = binding.activity
 	}

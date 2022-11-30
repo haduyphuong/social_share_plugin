@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">App_Name_Here</string>
+    <string name="facebook_app_id">Facebook_App_Id</string>
+    <string name="facebook_client_token">Facebook_Client_Token_Here</string>
+</resources>

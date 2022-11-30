@@ -57,6 +57,10 @@
  <meta-data android:name="com.facebook.sdk.ApplicationName"
              android:value="@string/app_name"/>
 
+ <meta-data
+            android:name="com.facebook.sdk.ClientToken"
+            android:value="@string/facebook_client_token" />
+
  <activity android:name="com.facebook.FacebookActivity"
      android:configChanges=
              "keyboard|keyboardHidden|screenLayout|screenSize|orientation"
